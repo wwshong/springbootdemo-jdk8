@@ -1,0 +1,1 @@
+./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=wwshong/whong-docker-demo:whong-docker-demo
