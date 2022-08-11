@@ -37,7 +37,7 @@ def deploy(environment) {
 
 	if ("${environment}" == 'dev') {
 		containerName = "spring_app_dev"
-		port = "8888"
+		port = "8181"
 	} 
 	else {
 		println "Environment not valid"
@@ -46,6 +46,6 @@ def deploy(environment) {
 
 	sh "docker ps -f name=${containerName} -q | xargs --no-run-if-empty docker stop"
 	sh "docker ps -a -f name=${containerName} -q | xargs -r docker rm"
-	sh "docker run -d -p ${port}:5000 --name ${containerName} springboot-on-jenkins/myapp:${BUILD_NUMBER}"
+	sh "docker run -d -p ${port}:8080 --name ${containerName} springboot-on-jenkins/myapp:${BUILD_NUMBER}"
 
 }
