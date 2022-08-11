@@ -12,7 +12,10 @@ pipeline {
         stage("Build") {
             steps { buildApp() }
 		}
-
+	
+		stage("Pack Docker Image") {
+			steps { packImage() }
+		}
         stage("Deploy - Dev") {
             steps { deploy('dev') }
 		}
@@ -25,6 +28,13 @@ pipeline {
 def buildApp() {
 	sh "chmod 777 mvnw"
 	sh "./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=wwshong/whong-docker-demo:whong-docker-demo"
+	dir ('.' ) {
+		def appImage = docker.build("springboot-on-jenkins/myapp:${BUILD_NUMBER}")
+	}
+}
+
+def packImage() {
+	 
 	dir ('.' ) {
 		def appImage = docker.build("springboot-on-jenkins/myapp:${BUILD_NUMBER}")
 	}
