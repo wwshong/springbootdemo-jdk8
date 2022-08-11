@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DockerDemoController {
 	 @GetMapping("/hello")
 	    public String hello() {
-	        return "Hello - Docker from whong";
+			System.out.println( "running springboot on docker jenkins" );
+	        return "running springboot on docker jenkins";
 	    }
 }
