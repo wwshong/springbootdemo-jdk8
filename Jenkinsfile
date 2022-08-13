@@ -7,6 +7,12 @@ pipeline {
         disableConcurrentBuilds()
     }
 
+	environment {
+		sh "printenv"
+		FOO = "bar"
+		echo "FOO=${env.FOO}"
+		println "This print ${env.FOO}"
+	}
     stages {
 
         stage("Build") {
