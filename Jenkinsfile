@@ -16,6 +16,13 @@ pipeline {
 
         stage("Build") {
             steps {
+		    script {
+			    System.out.println("pure java code")
+			    List<String> list = new ArrayList<>();
+			    list.add("one")
+			    list.add("two")
+			    System.out.println(list)
+		    }
 		    sh "printenv"
 		    echo "FOO=${env.FOO}"
 		println "This print ${env.FOO}"
