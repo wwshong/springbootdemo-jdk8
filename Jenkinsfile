@@ -8,15 +8,18 @@ pipeline {
     }
 
 	environment {
-		sh "printenv"
+		
 		FOO = "bar"
-		echo "FOO=${env.FOO}"
-		println "This print ${env.FOO}"
+		
 	}
     stages {
 
         stage("Build") {
-            steps { buildApp() }
+            steps {
+		    sh "printenv"
+		    echo "FOO=${env.FOO}"
+		println "This print ${env.FOO}"
+		    buildApp() }
 		}
 	
 		stage("Pack Docker Image") {
