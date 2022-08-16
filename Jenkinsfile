@@ -1,5 +1,7 @@
 #!/usr/bin/groovy
-
+@Library('JenkinsSharedLibUtil')
+import jenkinslib.JenkinsSharedLibUtil
+def JenkinsSharedLibUtil = new JenkinsSharedLibUtil()
 pipeline {
     agent any
 
@@ -29,6 +31,9 @@ pipeline {
 ]
 map.each { k, v ->
     println "$k = $v"
+	
+	JenkinsSharedLibUtil.sayHi()
+	JenkinsSharedLibUtil.sayHi2()
 }
 		    }
 		    sh "printenv"
