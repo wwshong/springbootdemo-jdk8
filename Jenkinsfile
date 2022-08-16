@@ -1,7 +1,7 @@
 #!/usr/bin/groovy
 @Library('JenkinsSharedLibUtil')
 import jenkinslib.JenkinsSharedLibUtil
-def JenkinsSharedLibUtil = new JenkinsSharedLibUtil()
+def jenkinsSharedLibUtil = new JenkinsSharedLibUtil()
 pipeline {
     agent any
 
@@ -19,7 +19,7 @@ pipeline {
         stage("Build") {
             steps {
 		    script {
-			    println("pure java code")
+			    println("pure java code 2")
 			    List<String> list = new ArrayList<>();
 			    list.add("one")
 			    list.add("two")
@@ -32,8 +32,8 @@ pipeline {
 map.each { k, v ->
     println "$k = $v"
 	
-	JenkinsSharedLibUtil.sayHi()
-	JenkinsSharedLibUtil.sayHi2()
+	jenkinsSharedLibUtil.sayHi()
+	jenkinsSharedLibUtil.sayHi2()
 }
 		    }
 		    sh "printenv"
