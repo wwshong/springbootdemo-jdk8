@@ -32,8 +32,10 @@ pipeline {
 map.each { k, v ->
     println "$k = $v"
 	
-	jenkinsSharedLibUtil.sayHi()
-	jenkinsSharedLibUtil.sayHi2()
+	def s1 = jenkinsSharedLibUtil.sayHi()
+	def s2 = jenkinsSharedLibUtil.sayHi2()
+	println "s1=${s1}"
+	println "s2=${s2}"
 }
 		    }
 		    sh "printenv"
