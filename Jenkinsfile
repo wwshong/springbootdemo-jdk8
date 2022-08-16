@@ -22,18 +22,20 @@ pipeline {
 			    list.add("one")
 			    list.add("two")
 			    println(list)
-		    }
-		    sh "printenv"
-		    echo "FOO=${env.FOO}"
-		println "This print ${env.FOO}"
-		    
-		    def map = [
+			    
+			     def map = [
     "Monday": ["exercise", "work"],
     "Sat": ["relax"]
 ]
 map.each { k, v ->
     println "$k = $v"
 }
+		    }
+		    sh "printenv"
+		    echo "FOO=${env.FOO}"
+		println "This print ${env.FOO}"
+		    
+		   
 
 		    
 		    buildApp() }
