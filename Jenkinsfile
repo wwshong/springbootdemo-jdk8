@@ -26,6 +26,16 @@ pipeline {
 		    sh "printenv"
 		    echo "FOO=${env.FOO}"
 		println "This print ${env.FOO}"
+		    
+		    def map = [
+    "Monday": ["exercise", "work"],
+    "Sat": ["relax"]
+]
+map.each { k, v ->
+    println "$k = $v"
+}
+
+		    
 		    buildApp() }
 		}
 	
