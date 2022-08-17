@@ -15,6 +15,15 @@ pipeline {
 		
 	}
     stages {
+        state("shared lib demo") {
+            def s1 = jenkinsSharedLibUtil.sayHi()
+                def s2 = jenkinsSharedLibUtil.sayHi2()
+                println "s1=${s1}"
+                println "s2=${s2}"
+
+            //global variables function   
+            helloWorldSimple("john", "Monday") 
+        }
 
         stage("Build") {
             steps {
@@ -32,10 +41,7 @@ pipeline {
 map.each { k, v ->
     println "$k = $v"
 	
-	def s1 = jenkinsSharedLibUtil.sayHi()
-	def s2 = jenkinsSharedLibUtil.sayHi2()
-	println "s1=${s1}"
-	println "s2=${s2}"
+	
 }
 		    }
 		    sh "printenv"
