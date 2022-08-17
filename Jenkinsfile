@@ -25,7 +25,12 @@ pipeline {
                     println "s2=${s2}"
                 }
                 //global variables function   
+
+                //takes parameters def call(String name, String dayOfWeek)
                 helloWorldSimple("john", "Monday") 
+
+                //pass a Map of name/val to helloWorld
+                helloWorld("name": "Doe", "dayOfWeek": "Tues")
             }
         }
 
