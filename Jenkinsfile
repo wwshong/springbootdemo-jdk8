@@ -31,6 +31,11 @@ pipeline {
 
                 //pass a Map of name/val to helloWorld
                 helloWorld("name": "Doe", "dayOfWeek": "Tues")
+
+                //1. pass map of name/val to helloWorldExternal
+                //2. helloWorldExternal.groovy calls loadLinuxScript(name: 'hello-world.sh') to read hello-world.sh and save it
+                //3. then run hello-world.sh on the Agent
+                helloWorldExternal("name": "Tom", "dayOfWeek": "Wed")
             }
         }
 
