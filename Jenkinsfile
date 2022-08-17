@@ -1,6 +1,6 @@
 #!/usr/bin/groovy
-@Library('JenkinsSharedLibUtil')
-import jenkinslib.JenkinsSharedLibUtil
+@Library('JenkinsSharedLibUtil') _
+//import jenkinslib.JenkinsSharedLibUtil
 def jenkinsSharedLibUtil = new JenkinsSharedLibUtil()
 pipeline {
     agent any
@@ -17,6 +17,7 @@ pipeline {
     stages {
         stage("shared lib demo") {
             steps {
+                //since jenkinsSharedLibUtil is Java/Groovy class, so they're inside script tag
                 script {
                     def s1 = jenkinsSharedLibUtil.sayHi()
                     def s2 = jenkinsSharedLibUtil.sayHi2()
