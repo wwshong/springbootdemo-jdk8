@@ -1,6 +1,6 @@
 #!/usr/bin/groovy
-@Library('JenkinsSharedLibUtil') _
-//import jenkinslib.JenkinsSharedLibUtil
+@Library('JenkinsSharedLibUtil')
+import jenkinslib.JenkinsSharedLibUtil
 def jenkinsSharedLibUtil = new JenkinsSharedLibUtil()
 pipeline {
     agent any
