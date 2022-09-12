@@ -66,7 +66,7 @@ map.each { k, v ->
 			steps { packImage() }
 		}
         stage("Deploy - Dev") {
-            steps { deploy() }
+            steps { deployApp() }
 		}
 
 	}
@@ -88,7 +88,7 @@ def packImage() {
 }
 
  
-def deploy() {
+def deployApp() {
 
 	def containerName = ''
 	def port = ''
