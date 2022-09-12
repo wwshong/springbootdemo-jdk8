@@ -66,7 +66,7 @@ map.each { k, v ->
 			steps { packImage() }
 		}
         stage("Deploy - Dev") {
-            steps { deploy) }
+            steps { deploy()) }
 		}
 
 	}
