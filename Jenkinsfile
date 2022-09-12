@@ -66,7 +66,7 @@ map.each { k, v ->
 			steps { packImage() }
 		}
         stage("Deploy - Dev") {
-            steps { deploy('dev') }
+            steps { deploy) }
 		}
 
 	}
@@ -87,11 +87,12 @@ def packImage() {
 	}
 }
 
-def deploy(environment) {
+//def deploy(environment) {
+def deploy() {
 
 	def containerName = ''
 	def port = ''
-
+     /*
 	if ("${environment}" == 'dev') {
 		containerName = "spring_app_dev"
 		port = "8181"
@@ -99,7 +100,9 @@ def deploy(environment) {
 	else {
 		println "Environment not valid"
 		System.exit(0)
-	}
+	}*/
+	containerName = "spring_app_dev"
+		port = "8181"
 
 	sh "docker ps -f name=${containerName} -q | xargs --no-run-if-empty docker stop"
 	sh "docker ps -a -f name=${containerName} -q | xargs -r docker rm"
