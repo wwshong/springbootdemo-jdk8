@@ -87,7 +87,7 @@ def packImage() {
 	}
 }
 
-//def deploy(environment) {
+ 
 def deploy() {
 
 	def containerName = ''
