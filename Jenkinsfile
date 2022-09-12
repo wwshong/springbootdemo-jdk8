@@ -1,6 +1,7 @@
 #!/usr/bin/groovy
 @Library('shared-lib') _
-def jenkinsSharedLibUtil = new JenkinsSharedLibUtil()
+
+ 
 pipeline {
     agent any
 
@@ -16,13 +17,7 @@ pipeline {
     stages {
         stage("shared lib demo") {
             steps {
-                //since jenkinsSharedLibUtil is Java/Groovy class, so they're inside script tag
-                script {
-                    def s1 = jenkinsSharedLibUtil.sayHi()
-                    def s2 = jenkinsSharedLibUtil.sayHi2()
-                    println "s1=${s1}"
-                    println "s2=${s2}"
-                }
+                 
                 //global variables function   
 
                 //takes parameters def call(String name, String dayOfWeek)
